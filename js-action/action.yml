@@ -1,0 +1,15 @@
+name: JS action
+description: implementing th JS action
+
+inputs:
+  name:
+    required: true
+    description: input for the index.js
+
+outputs:
+  action-output:
+    description: output from index.js
+
+runs:
+  using: node20
+  main: dist/index.js
