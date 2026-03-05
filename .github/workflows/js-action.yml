@@ -1,0 +1,21 @@
+name: Javascript action
+on:
+  - workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout the repo
+        uses: actions/checkout@v4
+      - name: install dep & build ncc
+        run: | 
+          cd js-action
+          npm install
+          npm run build
+      - name: use the JS action
+        id: action-output
+        uses: ./js-action
+        with:
+          name: vicky
+      - run: ${{steps.action-output.outputs.js-output}}
