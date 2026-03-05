@@ -18,4 +18,4 @@ jobs:
         uses: ./js-action
         with:
           name: vicky
-      - run: ${{steps.action-output.outputs.js-output}}
+      - run: ${{steps.action-output.outputs.action-output}}
